@@ -18,6 +18,8 @@ class Niveles extends Migration
             $table->string('name');
             $table->string('description');
             $table->bigInteger('status');
+            $table->bigInteger('minExp');
+            $table->bigInteger('maxExp');
             $table->timestamps();
         });
     }
