@@ -19,18 +19,20 @@ class UsersController extends Controller
             'password'=>'required',
             'name'=>'required',
         ]);
+
         $user = new User();
         $user->name=$request->name;
+        $user->lastName=$request->lastName;
+        $user->age=$request->age;
         $user->email=$request->email;
         $user->password=Hash::make($request->password);
-        $user->tipo='0';
+        $user->experience=1;
+        $user->fk_roll=1;
 
-        // if($user->save()){
-        //     return response()->json($user);
-        // }
         if($user->save()){
-            return view('Login');
+             return response()->json(202,"Usuario registrado con EXITO");
         }
-        return abort(402, "Error al Insertar");
+
+        return abort(402, "Error al registrar Usuario");
     }
 }
