@@ -17,6 +17,7 @@ class Roles extends Migration
             $table->id();
             $table->string('name');
             $table->string('description');
+            $table->bigInteger('status');
             $table->timestamps();
         });
     }
