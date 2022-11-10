@@ -36,6 +36,7 @@ Route::middleware('auth:sanctum')->put('/v1/usr/level_up','UsersController@level
 
 
 //Rutas Pesos
+
 Route::middleware('auth:sanctum')->post('/v1/peso/add_weight','PesosController@add_weight');
 Route::middleware('auth:sanctum')->get('/v1/peso/peso_perdido','PesosController@get_first_last_weight');
 Route::middleware('auth:sanctum')->get('/v1/peso/get_historial','PesosController@index_weight');
@@ -43,6 +44,15 @@ Route::middleware('auth:sanctum')->delete('/v1/peso/delete_weight/{id}','PesosCo
 
 
 
-//
-Route::middleware('auth:sanctum')->put('/v1/peso/','PesosController@update_profile');
+
+
+//Rutas Niveles
+
+Route::middleware('auth:sanctum')->get('/v1/levels/get_all','NivelesController@get_levels');
+Route::middleware('auth:sanctum')->get('/v1/levels/get_one/{id}','NivelesController@get_level');
+
+Route::middleware('auth:sanctum')->put('/v1/levels/update/{id}','NivelesController@update_level');
+Route::middleware('auth:sanctum')->put('/v1/levels/disable/{id}','NivelesController@disable');
+Route::middleware('auth:sanctum')->put('/v1/levels/enable/{id}','NivelesController@enable');
+
 
