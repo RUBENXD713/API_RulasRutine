@@ -59,3 +59,33 @@ Route::middleware('auth:sanctum')->put('/v1/levels/enable/{id}','NivelesControll
 Route::middleware('auth:sanctum')->get('/v1/levels/get_user_level','NivelesController@get_user_level');
 
 
+
+
+
+//Rutas Calorias
+
+Route::middleware('auth:sanctum')->post('/v1/calorias/add_calories','CaloriasController@add_calories');
+Route::middleware('auth:sanctum')->get('/v1/calorias/get_all_user','CaloriasController@get_all_user');
+
+
+
+
+
+//Rutas Ejercicios
+
+Route::middleware('auth:sanctum')->post('/v1/ejercicios/add_exercise','EjerciciosController@add_exercise');
+
+
+Route::middleware('auth:sanctum')->get('/v1/ejercicios/get_one/{id}','EjerciciosController@get_one');
+Route::middleware('auth:sanctum')->get('/v1/ejercicios/get_all','EjerciciosController@get_all');
+Route::middleware('auth:sanctum')->get('/v1/ejercicios/get_all_enabled','EjerciciosController@get_all_enabled');
+Route::middleware('auth:sanctum')->get('/v1/ejercicios/get_all_disabled','EjerciciosController@get_all_disabled');
+
+
+Route::middleware('auth:sanctum')->put('/v1/ejercicios/update_ejercise/{id}','EjerciciosController@update_ejercise');
+Route::middleware('auth:sanctum')->put('/v1/ejercicios/enable/{id}','EjerciciosController@enable');
+Route::middleware('auth:sanctum')->put('/v1/ejercicios/disable/{id}','EjerciciosController@disable');
+
+
+
+

@@ -15,7 +15,7 @@ class Calorias extends Migration
     {
         Schema::create('calorias', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('calorias');
+            $table->bigInteger('caloria');
             $table->string('fk_user');
             $table->timestamps();
         });
