@@ -16,7 +16,7 @@ use App\Rutina;
 use Illuminate\Support\Facades\Hash;
 use Log;
 
-class RolesController extends Controller
+class CaloriasController extends Controller
 {
-    
+    //
 }

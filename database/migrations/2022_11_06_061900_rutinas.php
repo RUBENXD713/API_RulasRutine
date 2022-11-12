@@ -17,8 +17,11 @@ class Rutinas extends Migration
             $table->id();
             $table->string('fk_nivel');
             $table->string('fk_ejercicio');
-            $table->string('tipe');
-            $table->string('tipe_excercise');
+            $table->string('body');
+            $table->string('tipe_routine');
+            $table->bigInteger('series');
+            $table->bigInteger('repetitions');
+            $table->bigInteger('calorias');
             $table->bigInteger('status');
             $table->timestamps();
         });

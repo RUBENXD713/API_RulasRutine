@@ -9,6 +9,10 @@ use Illuminate\Validation\ValidationException;
 use App\User;
 use App\Peso;
 use App\Nivel;
+use App\Caloria;
+use App\Ejercicio;
+use App\Role;
+use App\Rutina;
 use Illuminate\Support\Facades\Hash;
 use Log;
 
@@ -73,4 +77,15 @@ class NivelesController extends Controller
         return response()->json("El regitro NO se ah podido habilitar",402);
     }
 
+
+    public function get_user_level(Request $request){
+        $user = $request->user();
+
+        $nivel = Nivel::where('minExp','<=',$user->experience)->where('maxExp','>=',$user->experience)->get();
+
+        return response()->json(["user_experience"=>$user->experience,
+        "nivel_name"=>$nivel[0]->name,"nivel_minExp"=>$nivel[0]->minExp,
+        "nivel_maxExp"=>$nivel[0]->maxExp]);
+    }
+    
 }

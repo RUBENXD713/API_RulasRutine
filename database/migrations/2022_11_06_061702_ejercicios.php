@@ -16,9 +16,8 @@ class Ejercicios extends Migration
         Schema::create('ejercicios', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->text('description');
             $table->text('url');
-            $table->text('repetitions');
             $table->bigInteger('status');
             $table->timestamps();
         });

@@ -56,3 +56,6 @@ Route::middleware('auth:sanctum')->put('/v1/levels/disable/{id}','NivelesControl
 Route::middleware('auth:sanctum')->put('/v1/levels/enable/{id}','NivelesController@enable');
 
 
+Route::middleware('auth:sanctum')->get('/v1/levels/get_user_level','NivelesController@get_user_level');
+
+
