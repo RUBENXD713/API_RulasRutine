@@ -13,6 +13,8 @@ use App\Caloria;
 use App\Ejercicio;
 use App\Role;
 use App\Rutina;
+use App\Cuerpo;
+use App\Tipo;
 use Illuminate\Support\Facades\Hash;
 use Log;
 

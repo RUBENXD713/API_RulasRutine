@@ -89,3 +89,25 @@ Route::middleware('auth:sanctum')->put('/v1/ejercicios/disable/{id}','Ejercicios
 
 
 
+
+//Rutas Partes del Cuerpos
+
+Route::middleware('auth:sanctum')->get('/v1/cuerpos/get_one/{id}','CuerposController@get_one');
+Route::middleware('auth:sanctum')->get('/v1/cuerpos/get_all','CuerposController@get_all');
+
+Route::middleware('auth:sanctum')->put('/v1/cuerpos/update/{id}','CuerposController@update');
+Route::middleware('auth:sanctum')->put('/v1/cuerpos/enable/{id}','CuerposController@enable');
+Route::middleware('auth:sanctum')->put('/v1/cuerpos/disable/{id}','CuerposController@disable');
+
+
+
+
+
+//Rutas Tipos  de Ejercicios
+
+Route::middleware('auth:sanctum')->get('/v1/tipos/get_one/{id}','TiposController@get_one');
+Route::middleware('auth:sanctum')->get('/v1/tipos/get_all','TiposController@get_all');
+
+Route::middleware('auth:sanctum')->put('/v1/tipos/update/{id}','TiposController@update');
+Route::middleware('auth:sanctum')->put('/v1/tipos/enable/{id}','TiposController@enable');
+Route::middleware('auth:sanctum')->put('/v1/tipos/disable/{id}','TiposController@disable');

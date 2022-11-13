@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Rutinas extends Migration
+class Tipos extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,9 @@ class Rutinas extends Migration
      */
     public function up()
     {
-        Schema::create('rutinas', function (Blueprint $table) {
+        Schema::create('tipos', function (Blueprint $table) {
             $table->id();
-            $table->string('fk_nivel');
-            $table->string('fk_ejercicio');
-            $table->string('fk_cuerpo');
-            $table->string('fk_tipo');
-            $table->bigInteger('series');
-            $table->bigInteger('repetitions');
-            $table->bigInteger('calorias');
+            $table->string('name');
             $table->bigInteger('status');
             $table->timestamps();
         });
@@ -34,6 +28,6 @@ class Rutinas extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rutinas');
+        Schema::dropIfExists('tipos');
     }
 }
