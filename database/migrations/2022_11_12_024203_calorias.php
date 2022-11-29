@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Niveles extends Migration
+class Calorias extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class Niveles extends Migration
      */
     public function up()
     {
-        Schema::create('niveles', function (Blueprint $table) {
+        Schema::create('calorias', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description');
-            $table->bigInteger('status');
-            $table->bigInteger('minExp');
-            $table->bigInteger('maxExp');
+            $table->bigInteger('caloria');
+            $table->string('fk_user');
             $table->timestamps();
         });
     }
@@ -31,6 +28,6 @@ class Niveles extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('niveles');
+        Schema::dropIfExists('calorias');
     }
 }
