@@ -111,3 +111,14 @@ Route::middleware('auth:sanctum')->get('/v1/tipos/get_all','TiposController@get_
 Route::middleware('auth:sanctum')->put('/v1/tipos/update/{id}','TiposController@update');
 Route::middleware('auth:sanctum')->put('/v1/tipos/enable/{id}','TiposController@enable');
 Route::middleware('auth:sanctum')->put('/v1/tipos/disable/{id}','TiposController@disable');
+
+
+
+//Rutas Rutinas
+Route::middleware('auth:sanctum')->post('/v1/rutinas/add_rutine','RutinasController@add_rutine');
+
+Route::middleware('auth:sanctum')->get('/v1/rutinas/get_one/{id}','RutinasController@get_one');
+Route::middleware('auth:sanctum')->get('/v1/rutinas/get_all','RutinasController@get_all');
+
+Route::middleware('auth:sanctum')->put('/v1/rutinas/update/{id}','RutinasController@update');
+Route::middleware('auth:sanctum')->put('/v1/rutinas/disable/{id}','RutinasController@disable');
