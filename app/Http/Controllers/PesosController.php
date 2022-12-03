@@ -39,7 +39,9 @@ class PesosController extends Controller
         $first_peso = DB::table('pesos')->where('fk_user', $user->id)->first();
         $last_peso = DB::table('pesos')->where('fk_user', $user->id)->orderBy('id','DESC')->first();
 
-        return response()->json(["last: " =>  $last_peso ->peso,"first: " => $first_peso->peso,"perdio: " => ($first_peso->peso - $last_peso ->peso)]);
+        return response()->json(["last: " =>  $last_peso->peso,
+        "first: " => $first_peso->peso,
+        "perdio: " => ($first_peso->peso - $last_peso->peso)]);
     }
 
 
